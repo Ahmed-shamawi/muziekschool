@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <script> 
+    function validateForm() {
+      var title = $("#title").val();
+      var author = $("#author").val();
+      var date = $("#date").val();
+      var content = $("#content").val();
+      
+      if (title === "" || author === "" || date === "" || content === "") {
+        alert("Alle velden zijn verplicht!");
+        return false;
+      }
+      
+      var datePattern = /^\d{4}-\d{2}-\d{2}$/;
+      if (!datePattern.test(date)) {
+        alert("Ongeldige datum! Gebruik het formaat YYYY-MM-DD");
+        return false;
+      }
+      
+      return true;
+    }
+    
+    $(document).ready(function() {
+      $("#submit").click(function(event) {
+        event.preventDefault();
+        if (validateForm()) {
+          const title = $("#title").val();
+          const author = $("#author").val();
+          const date = $("#date").val();
+          const content = $("#content").val();
+          
+          const article = "<div class='blog-post'><h2 class='title'>" + title + "</h2><p class='author'>" + author + "</p><p class='date'>" + date + "</p><p class='content'>" + content + "</p></div>";
+          
+          $.ajax({
+            url: "html/archief.html",
+            type: "GET",
+            dataType: "html",
+            success: function(data) {
+              var articles = $(data).find(".blog-post");
+              $(articles[0]).before(article);
+              alert("Het artikel is toegevoegd!");
+              $("#title").val("");
+              $("#author").val("");
+              $("#date").val("");
+              $("#content").val("");
+            },
+            error: function() {
+              alert("Er is een fout opgetreden. Het artikel kon niet worden toegevoegd.");
+            }
+          });
+        }
+      });
+    });
+  </script>
+</head>
+<body>
+<!----Header---->    
+	<header class="header">
+		<div class="container">
+			<div>
+				<h1>Muziekschool H&J</h1>
+				<p>Add artikel</p>
+			</div>
+		</div>
+	</header>
+<!----navbar---->   
+	<nav class="navbar">
+		<div class="container">
+			<ul class="nav">
+				<li><a href="../index.html">Home</a></li>
+				<li><a href="#">Blog<i class="fa-solid fa-caret-down"></i></a>
+					<ul>
+						<li><a href="recente.html">Recente</a></li>
+						<li><a href="archief.html">Archief</a></li>
+            <li><a href="addartikel.html" class="active">Addartikel</a></li>
+					</ul>
+				</li>
+					
+				<li><a href="overons.html">Over ons</a></li>
+				<li><a href="tarieven.html">Tarieven</a></li>
+				<li><a href="contact.html">Contact</a></li>
+			</ul>
+		</div>
+	</nav>
+  
+  <form class="form">
+    <div class="container">
+      <h2>Beheerpaneel</h2>
+      <label for="title">Titel:</label><br>
+      <input type="text" id="title" name="title"><br>
+      <label for="author">Auteur:</label><br>
+      <input type="text" id="author" name="author"><br>
+      <label for="date">Publicatiedatum:</label><br>
+      <input type="date" id="date" min="2023-05-05" name="date"><br>
+      <label for="content">Inhoud:</label><br>
+      <textarea id="content" name="content"></textarea><br>
+      <input type="submit" id="submit" value="Toevoegen">
+    </div>  
+  </form>
+
+  <!----Footer---->       
+	<footer class="footer">
+		<div class="container">
+			<div>
+			<p>© Copyright 2021 Muziekschool H&J</p>
+			<p>
+			(Dit is een oefenopdracht, alle informatie op deze website is
+			fictief.)
+			</p>
+			</div>
+		</div>  
+	</footer>
+</body>
+</html>

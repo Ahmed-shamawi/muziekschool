@@ -1,0 +1,287 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 15px;
+}
+
+/*============== Header =================*/
+.header .container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+    text-align: center;
+    color: #ffffff;
+    background: #f57114;
+}
+
+.header h1{
+    font-weight: bolder;
+    margin-bottom: 20px;
+ }
+.header p{
+    font-weight: bold;
+ }
+
+ /*============== Navbar =================*/
+.navbar .container{
+   display: flex;
+   justify-content: start; 
+   align-items: center;
+   height: 100%;
+} 
+i{
+    margin-left: 5px;
+}
+.navbar{
+    height: 60px;
+    color: #ffffff;
+    background-color: #bd560d;
+    border-bottom: 5px solid rgb(253, 213, 0);
+}
+.navbar a{
+    color: #ffffff;
+    text-decoration: none;
+}
+.navbar a:hover{
+    color: #f58b40;
+}
+.navbar a.active{
+    color: #f6ab76;
+    text-transform: uppercase;
+    font-weight: 500;
+}
+
+.navbar ul{
+    display: flex;
+    list-style-type: none;
+    margin-left: 30px;
+}
+
+.navbar ul li{
+    margin-left: 20px;
+}
+
+.navbar ul li ul{
+    position: absolute;
+    display: none;
+    background-color: #bd560d;
+}
+nav ul li:hover ul{
+    display: block;
+}
+
+nav ul ul li{
+    width: 120px;
+    display: list-item;
+    position: relative;
+    padding: 10px;
+}
+/*============== Container =================*/
+
+#container{
+    display: flex;
+}
+
+/*============== Inhoud =================*/
+
+main{
+    background-color: #ffb785;
+    min-height: calc(100vh - 280px);
+    font-size: 12px;
+    width: 100%;
+}
+main p{
+    margin-bottom: 20px;
+}
+
+/*============== Links Kant =================*/
+
+.side{
+    width: 100%;
+    padding: 20px 10px;
+}
+.side img{
+    display: block;
+    width: 90%;
+    height: auto;
+    margin: 20px auto;
+}
+ h2{
+    margin: 20px 0;
+}
+
+/*============== Richt Kant =================*/
+
+.inhoud{
+    background-color: #ffffff;
+    width: 100%;
+    padding: 20px 10px; 
+}
+
+.inhoud img{
+    display: block;
+    width: 90%;
+    height: auto;
+    margin: 20px auto;
+}
+.inhoud h2{
+    color: #bd5305;
+}
+.inhoud h6{
+    margin-bottom: 20px;
+}
+
+/*============== Over Ons Pagina =================*/
+/*============== Over Ons Pagina =================*/
+
+
+.hannah img{
+    width: 25%;
+    height: auto;
+    float: right;
+}
+.jesse img{
+    width: 25%;
+    height: 10%;
+    float: left;
+}
+.jesse h3{
+    margin-bottom: 10px;
+}
+
+.blog-post{
+    width: 800px;
+    margin: 20px auto;
+    padding: 10px;
+    border: 1px solid #1e1e1e;
+}
+.author, .date{
+    margin: 20px 0;
+    display: inline;
+    color: #bd560d;
+}
+.content{
+    margin-top: 15px;
+}
+
+/*============== Add artikel Pagina =================*/
+.form{
+    padding: 15px;
+}
+.form .container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.title h2{
+    margin-top: 20px;
+    color: #e56306;
+}
+
+.form label{
+    color: #1e1e1e;
+    font-weight: bold;
+
+}
+
+form input{
+    width: 60%;
+    height: 40px;
+    font-size: 14px;
+    padding: 15px;
+    margin-bottom: 5px;
+    border: 1px solid #bd5305;
+    border-radius: 5px;
+    background-color: transparent;
+}
+
+form textarea{
+    font-size: 16px;
+    width: 60%;
+    height: 200px;
+    padding: 10px 15px;
+    margin-bottom: 5px;
+    border: 1px solid #bd5305;
+    border-radius: 5px;
+    background-color: transparent;
+}
+
+form #submit{
+    padding: 0 10px;
+    border-radius: 5px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #ffffff;
+    letter-spacing: 1px;
+    text-align: center;
+    height: 40px;
+    background-color: #bd5305;
+    cursor: pointer;
+    border: none;
+}
+
+form button:active{
+    background-color: #e56306;
+    color: white;
+}
+/*============== Over Ons Pagina =================*/
+
+/*============== Footer =================*/
+
+.footer .container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 70px;
+    font-size: 10px;
+    text-align: center;
+    font-weight: bold;
+    background: #bd560d;
+}
+
+/*============== Responsev  =================*/
+
+@media only screen and (min-width: 768px){
+   
+    .side{
+        width: 33%;
+        float: left;
+        font-size: 16px;
+    }
+   
+    .inhoud{
+        width: 66%;
+        float: right;
+        font-size: 16px;
+    }
+
+    #main-footer p{
+        font-size: 14px;
+    }
+    .hannah img{
+        width: 50%;
+        height:20%;
+    }
+    .jesse img{
+        width: 50%;
+        height: 10%;
+    }
+
+}
+@media only screen and (min-width: 768px) {
+    
+}
+
+@media only screen and (min-width: 992px){
+
+}
+
