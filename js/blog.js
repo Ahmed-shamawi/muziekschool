@@ -17,8 +17,7 @@
             let item = $("<li>").append($("<a>").attr("href", "detail.html#" + link).text(title)).append("<br>").append(author).append("<br>").append(date);
             list.append(item);
           });
-          $("#blog-list").append(list);
-          console.log(data);
+          $("#blog-list").append(list); 
         }
       });
     });
