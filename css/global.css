@@ -739,4 +739,4 @@ textarea:focus{
   }
 }
 
-.quote-container{align-items:center;background:linear-gradient(#000000de,rgba(0,0,0,.623)),url(../images/blog_post_7.png);background-position:100%;background-size:cover;display:flex;flex-direction:column;flex-wrap:wrap;justify-content:center;margin-left:auto;margin-right:auto;min-height:calc(100vh - 360px);padding:2rem;width:100%}/
+.quote-container{align-items:center;background:linear-gradient(#000000de,rgba(0,0,0,.623)),url(../images/blog_post_7.png);background-position:100%;background-size:cover;display:flex;flex-direction:column;flex-wrap:wrap;justify-content:center;margin-left:auto;margin-right:auto;min-height:calc(100vh - 360px);padding:2rem;width:100%}
