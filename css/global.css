@@ -92,7 +92,7 @@ p {
 img {
   max-width: 100%;
   height: auto;
-  user-select: none;
+  -webkit-user-select: none;
   border-style: none;
   display: block;
 }
@@ -738,3 +738,5 @@ textarea:focus{
     left: 4%;
   }
 }
+
+.quote-container{align-items:center;background:linear-gradient(#000000de,rgba(0,0,0,.623)),url(../static/media/blog_post_7.d12a8e72f1ea633db82a.png);background-position:100%;background-size:cover;display:flex;flex-direction:column;flex-wrap:wrap;justify-content:center;margin-left:auto;margin-right:auto;min-height:calc(100vh - 360px);padding:2rem;width:100%}/
